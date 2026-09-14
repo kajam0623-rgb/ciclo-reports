@@ -130,6 +130,18 @@ th{font-size:12px;color:var(--sub);font-weight:600}
 .gloss b{color:var(--ink)}
 .gloss span{color:var(--sub)}
 
+.snip{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px;background:#fcfcfd}
+.snip header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.snip h4{font-size:15px}
+.snip-why{margin:0 0 10px;font-size:13px;color:var(--sub);line-height:1.6}
+.snip pre{margin:0;background:#14171c;color:#e6e9ee;border-radius:9px;padding:14px 16px;overflow-x:auto;
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.65;white-space:pre}
+.snip-note{margin:9px 0 0;font-size:12.5px;color:var(--b)}
+.copy{flex-shrink:0;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;
+  padding:5px 12px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit}
+.copy:hover{background:#f2f3f5}
+.copy.done{background:var(--a);border-color:var(--a);color:#fff}
+
 .method{color:var(--sub);font-size:11.5px;line-height:1.7;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}
 
 /* 맨 아래 CTA — 리포트를 끝까지 읽은 사람이 다음에 할 일 */
@@ -173,6 +185,8 @@ th{font-size:12px;color:var(--sub);font-weight:600}
   body{background:#fff}
   .wrap{padding:0}
   .card{break-inside:avoid;page-break-inside:avoid;border-color:#ccc}
+  .copy{display:none}
+  .snip pre{background:#f4f5f7!important;color:#14171c!important;border:1px solid #ddd}
   .cta{background:#fff!important;color:#14171c!important;border:2px solid #14171c!important}
   .cta-head em,.cta-fix,.cta-note,.cta-eyebrow,.cta-sign span{color:#333!important}
   .cta-offer{background:#f2f3f5!important} .cta-offer span{color:#555!important}
@@ -195,8 +209,8 @@ th{font-size:12px;color:var(--sub);font-weight:600}
       <div class="url">http://withmedental.com/</div>
     </div>
     <div class="meta">
-      진단일 2026. 9. 14.<br>
-      채점 기준 범용 · 룰베이스 결정론 채점
+      진단일 2026. 9. 15.<br>
+      채점 기준 범용 + 치과 · 룰베이스 결정론 채점
     </div>
   </div>
 
@@ -204,26 +218,26 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     <div class="totals">
       
   <div class="donut t-b">
-    <svg viewBox="0 0 180 180" role="img" aria-label="SEO 총점 71점">
+    <svg viewBox="0 0 180 180" role="img" aria-label="SEO 총점 70점">
       <circle cx="90" cy="90" r="74" class="track"/>
-      <circle cx="90" cy="90" r="74" class="bar" data-anim="ring" data-value="71"
-              style="stroke-dasharray:465.0;stroke-dashoffset:134.8"/>
+      <circle cx="90" cy="90" r="74" class="bar" data-anim="ring" data-value="70"
+              style="stroke-dasharray:465.0;stroke-dashoffset:139.5"/>
     </svg>
     <div class="donut-mid">
-      <b data-anim="count" data-value="71">71</b><span>/100</span>
+      <b data-anim="count" data-value="70">70</b><span>/100</span>
       <em>양호</em>
     </div>
     <p class="donut-label">SEO 총점</p>
   </div>
       
   <div class="donut t-e">
-    <svg viewBox="0 0 180 180" role="img" aria-label="GEO 총점 32점">
+    <svg viewBox="0 0 180 180" role="img" aria-label="GEO 총점 29점">
       <circle cx="90" cy="90" r="74" class="track"/>
-      <circle cx="90" cy="90" r="74" class="bar" data-anim="ring" data-value="32"
-              style="stroke-dasharray:465.0;stroke-dashoffset:316.2"/>
+      <circle cx="90" cy="90" r="74" class="bar" data-anim="ring" data-value="29"
+              style="stroke-dasharray:465.0;stroke-dashoffset:330.1"/>
     </svg>
     <div class="donut-mid">
-      <b data-anim="count" data-value="32">32</b><span>/100</span>
+      <b data-anim="count" data-value="29">29</b><span>/100</span>
       <em>취약</em>
     </div>
     <p class="donut-label">GEO 총점</p>
@@ -249,15 +263,15 @@ th{font-size:12px;color:var(--sub);font-weight:600}
       <span class="bar-track"><i data-anim="bar" data-value="67" style="width:67%"></i></span>
       <b class="bar-val" data-anim="count" data-value="67">67</b>
     </li>
-    <li class="bar-row t-a">
-      <span class="bar-name">콘텐츠·<span class="term" tabindex="0" data-tip="구글이 콘텐츠를 평가하는 4가지 기준 — 경험·전문성·권위·신뢰성. 누가 썼고 믿을 만한가를 본다.">E-E-A-T</span></span>
-      <span class="bar-track"><i data-anim="bar" data-value="80" style="width:80%"></i></span>
-      <b class="bar-val" data-anim="count" data-value="80">80</b>
-    </li>
     <li class="bar-row t-b">
-      <span class="bar-name">Local <span class="term" tabindex="0" data-tip="검색엔진 최적화. 네이버·구글 검색 결과에 잘 노출되게 홈페이지를 정리하는 일.">SEO</span></span>
-      <span class="bar-track"><i data-anim="bar" data-value="65" style="width:65%"></i></span>
-      <b class="bar-val" data-anim="count" data-value="65">65</b>
+      <span class="bar-name">콘텐츠·<span class="term" tabindex="0" data-tip="구글이 콘텐츠를 평가하는 4가지 기준 — 경험·전문성·권위·신뢰성. 누가 썼고 믿을 만한가를 본다.">E-E-A-T</span></span>
+      <span class="bar-track"><i data-anim="bar" data-value="75" style="width:75%"></i></span>
+      <b class="bar-val" data-anim="count" data-value="75">75</b>
+    </li>
+    <li class="bar-row t-c">
+      <span class="bar-name">Local <span class="term" tabindex="0" data-tip="검색엔진 최적화. 네이버·구글 검색 결과에 잘 노출되게 홈페이지를 정리하는 일.">SEO</span> (병원 기본정보)</span>
+      <span class="bar-track"><i data-anim="bar" data-value="64" style="width:64%"></i></span>
+      <b class="bar-val" data-anim="count" data-value="64">64</b>
     </li>
     <li class="bar-row t-b">
       <span class="bar-name">성능 준비도 (정적 점검만)</span>
@@ -270,14 +284,14 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     <h3>GEO 세부 점수 <small>생성형 AI가 인용할 수 있는 구조인가</small></h3>
     <ul class="bars">
     <li class="bar-row t-d">
-      <span class="bar-name"><span class="term" tabindex="0" data-tip="검색엔진과 AI가 인식하는 &quot;우리 브랜드라는 하나의 대상&quot;. 이게 흐리면 이름이 비슷한 다른 곳과 섞인다.">Entity</span> 명확성</span>
+      <span class="bar-name">병원 <span class="term" tabindex="0" data-tip="검색엔진과 AI가 인식하는 &quot;우리 브랜드라는 하나의 대상&quot;. 이게 흐리면 이름이 비슷한 다른 곳과 섞인다.">Entity</span> 명확성</span>
       <span class="bar-track"><i data-anim="bar" data-value="45" style="width:45%"></i></span>
       <b class="bar-val" data-anim="count" data-value="45">45</b>
     </li>
     <li class="bar-row t-d">
       <span class="bar-name">AI가 답변으로 가져가기 쉬운 구조</span>
-      <span class="bar-track"><i data-anim="bar" data-value="45" style="width:45%"></i></span>
-      <b class="bar-val" data-anim="count" data-value="45">45</b>
+      <span class="bar-track"><i data-anim="bar" data-value="39" style="width:39%"></i></span>
+      <b class="bar-val" data-anim="count" data-value="39">39</b>
     </li>
     <li class="bar-row t-e">
       <span class="bar-name"><span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> / <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span></span>
@@ -294,10 +308,10 @@ th{font-size:12px;color:var(--sub);font-weight:600}
       <span class="bar-track"><i data-anim="bar" data-value="20" style="width:20%"></i></span>
       <b class="bar-val" data-anim="count" data-value="20">20</b>
     </li>
-    <li class="bar-row t-b">
+    <li class="bar-row t-c">
       <span class="bar-name">주제별 URL 구조</span>
-      <span class="bar-track"><i data-anim="bar" data-value="70" style="width:70%"></i></span>
-      <b class="bar-val" data-anim="count" data-value="70">70</b>
+      <span class="bar-track"><i data-anim="bar" data-value="56" style="width:56%"></i></span>
+      <b class="bar-val" data-anim="count" data-value="56">56</b>
     </li>
     <li class="bar-row t-e">
       <span class="bar-name">정보 일관성</span>
@@ -321,29 +335,29 @@ th{font-size:12px;color:var(--sub);font-weight:600}
         <header><h4>사이트 구조·내부링크</h4><b data-anim="count" data-value="67">67</b></header>
         <ul><li class="good">전역 내비게이션 있음</li><li class="good">푸터 링크 있음</li><li class="good">URL 깊이 적정</li><li class="good"><span class="term" tabindex="0" data-tip="한 페이지 안에서 아래로 스크롤만 이동시키는 링크(#표시). 별도 페이지가 아니라서 검색결과에 따로 안 잡힌다.">앵커</span> 남용 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="모든 내용이 한 장에 다 들어 있고 메뉴는 스크롤만 시키는 구조. 보기엔 깔끔하지만 검색에는 페이지 1개로만 잡혀 불리하다.">원페이지</span>/<span class="term" tabindex="0" data-tip="한 페이지 안에서 아래로 스크롤만 이동시키는 링크(#표시). 별도 페이지가 아니라서 검색결과에 따로 안 잡힌다.">앵커</span> 구조 — 주제별로 <span class="term" tabindex="0" data-tip="읽어간 페이지를 검색엔진이 자기 데이터베이스에 저장하는 것. 색인이 안 되면 검색해도 안 나온다.">색인</span>될 페이지가 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="읽어간 페이지를 검색엔진이 자기 데이터베이스에 저장하는 것. 색인이 안 되면 검색해도 안 나온다.">색인</span> 가능한 <span class="term" tabindex="0" data-tip="우리 홈페이지 안에서 페이지끼리 연결한 링크.">내부 링크</span>가 적음 (<span class="term" tabindex="0" data-tip="한 페이지 안에서 아래로 스크롤만 이동시키는 링크(#표시). 별도 페이지가 아니라서 검색결과에 따로 안 잡힌다.">앵커</span> 링크는 대체재가 못 됨)</li><li class="bad"><span class="term" tabindex="0" data-tip="&quot;홈 &gt; 서비스안내 &gt; 상세페이지&quot; 처럼 현재 위치를 보여주는 경로 표시.">브레드크럼</span> 없음</li></ul>
       </article>
-      <article class="detail t-a">
-        <header><h4>콘텐츠·<span class="term" tabindex="0" data-tip="구글이 콘텐츠를 평가하는 4가지 기준 — 경험·전문성·권위·신뢰성. 누가 썼고 믿을 만한가를 본다.">E-E-A-T</span></h4><b data-anim="count" data-value="80">80</b></header>
-        <ul><li class="good">본문 분량 충분</li><li class="good">작성자/담당자 표기</li><li class="good">자격·경력 정보 노출</li><li class="good">이미지 <span class="term" tabindex="0" data-tip="이미지 설명 문구. 눈에는 안 보이지만 검색엔진은 이것으로 사진 내용을 파악한다.">alt</span> 충실</li><li class="good">문의·예약 경로 있음</li><li class="bad">외부 권위 출처 링크 없음</li><li class="bad">작성일/수정일이 없음</li></ul>
-      </article>
       <article class="detail t-b">
-        <header><h4>Local <span class="term" tabindex="0" data-tip="검색엔진 최적화. 네이버·구글 검색 결과에 잘 노출되게 홈페이지를 정리하는 일.">SEO</span></h4><b data-anim="count" data-value="65">65</b></header>
-        <ul><li class="good">주소 표기 확인</li><li class="good">전화번호 표기 확인</li><li class="good">영업시간 표기</li><li class="bad">지도 임베드 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.">LocalBusiness</span> <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span> 없음</li></ul>
+        <header><h4>콘텐츠·<span class="term" tabindex="0" data-tip="구글이 콘텐츠를 평가하는 4가지 기준 — 경험·전문성·권위·신뢰성. 누가 썼고 믿을 만한가를 본다.">E-E-A-T</span></h4><b data-anim="count" data-value="75">75</b></header>
+        <ul><li class="good">본문 분량 충분</li><li class="good">작성자/담당자 표기</li><li class="good">자격·경력 정보 노출</li><li class="good">이미지 <span class="term" tabindex="0" data-tip="이미지 설명 문구. 눈에는 안 보이지만 검색엔진은 이것으로 사진 내용을 파악한다.">alt</span> 충실</li><li class="good">문의·예약 경로 있음</li><li class="bad">외부 권위 출처 링크 없음</li><li class="bad">작성일/수정일이 없음</li><li class="bad">독립된 의료진 프로필 페이지가 없음 (경력이 접힌 영역·이미지에만 있을 가능성)</li></ul>
+      </article>
+      <article class="detail t-c">
+        <header><h4>Local <span class="term" tabindex="0" data-tip="검색엔진 최적화. 네이버·구글 검색 결과에 잘 노출되게 홈페이지를 정리하는 일.">SEO</span> (병원 기본정보)</h4><b data-anim="count" data-value="64">64</b></header>
+        <ul><li class="good">주소 표기 확인</li><li class="good">전화번호 표기 확인</li><li class="good">영업시간 표기</li><li class="good">진료과목 키워드가 본문에 노출</li><li class="bad">지도 임베드 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.">LocalBusiness</span> <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span> 없음</li><li class="bad">야간·주말 진료 여부가 안 나옴 — 지역 검색에서 밀림</li></ul>
       </article>
       <article class="detail t-b">
         <header><h4>성능 준비도 (정적 점검만)</h4><b data-anim="count" data-value="70">70</b></header>
         <ul><li class="good">모바일 <span class="term" tabindex="0" data-tip="모바일 화면 크기에 맞춰 보이게 하는 설정. 없으면 휴대폰에서 글씨가 깨알같이 작게 나온다.">viewport</span> 설정됨</li><li class="good">HTML 용량 적정</li><li class="good">외부 스크립트 수 적정</li><li class="good"><span class="term" tabindex="0" data-tip="홈페이지 파일을 압축해서 보내는 기능. 켜두면 로딩이 눈에 띄게 빨라진다.">전송 압축</span> 적용</li><li class="bad">이미지 <span class="term" tabindex="0" data-tip="화면에 보이는 사진부터 먼저 불러오고 아래쪽 사진은 나중에 불러오는 기법. 첫 화면이 빨리 뜬다.">지연 로딩</span> 미적용</li><li class="bad">구형 이미지 포맷 사용</li><li class="bad"><span class="term" tabindex="0" data-tip="화면이 그려지기 전에 먼저 다 받아야 하는 디자인 파일. 개수가 많으면 첫 화면이 늦게 뜬다.">렌더 차단 CSS</span> 파일이 많음</li></ul>
       </article>
       <article class="detail t-d">
-        <header><h4><span class="term" tabindex="0" data-tip="검색엔진과 AI가 인식하는 &quot;우리 브랜드라는 하나의 대상&quot;. 이게 흐리면 이름이 비슷한 다른 곳과 섞인다.">Entity</span> 명확성</h4><b data-anim="count" data-value="45">45</b></header>
+        <header><h4>병원 <span class="term" tabindex="0" data-tip="검색엔진과 AI가 인식하는 &quot;우리 브랜드라는 하나의 대상&quot;. 이게 흐리면 이름이 비슷한 다른 곳과 섞인다.">Entity</span> 명확성</h4><b data-anim="count" data-value="45">45</b></header>
         <ul><li class="good">title에 브랜드명 포함</li><li class="good">본문에 브랜드명 반복 노출</li><li class="good">이름·주소·전화 3요소 완비</li><li class="bad"><span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. 기관·회사 정보를 담는 형식.">Organization</span>/<span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.">LocalBusiness</span> name이 <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>에 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="구조화 데이터 항목. 네이버 플레이스·인스타그램 등 우리 쪽 다른 공식 계정 주소를 적어두는 칸. AI가 이름이 비슷한 다른 곳과 헷갈리지 않게 해준다.">sameAs</span> 없음 — AI가 다른 동명 업체와 구분 못 함</li><li class="bad"><span class="term" tabindex="0" data-tip="SNS나 카톡에 링크를 붙였을 때 표시되는 사이트 이름.">og:site_name</span> 없음</li></ul>
       </article>
       <article class="detail t-d">
-        <header><h4>AI가 답변으로 가져가기 쉬운 구조</h4><b data-anim="count" data-value="45">45</b></header>
-        <ul><li class="good">리스트로 정리된 정보</li><li class="good">표 형태 정보 제공</li><li class="good">문단 길이가 인용하기 좋음</li><li class="bad">질문형 소제목이 없음 — AI가 인용할 단위가 없음</li><li class="bad">FAQ 영역 없음</li><li class="bad">소제목이 적어 문서가 한 덩어리</li></ul>
+        <header><h4>AI가 답변으로 가져가기 쉬운 구조</h4><b data-anim="count" data-value="39">39</b></header>
+        <ul><li class="good">리스트로 정리된 정보</li><li class="good">표 형태 정보 제공</li><li class="good">문단 길이가 인용하기 좋음</li><li class="bad">질문형 소제목이 없음 — AI가 인용할 단위가 없음</li><li class="bad">FAQ 영역 없음</li><li class="bad">소제목이 적어 문서가 한 덩어리</li><li class="bad">환자가 실제로 검색하는 질문(비용·기간·통증) 소제목이 없음</li></ul>
       </article>
       <article class="detail t-e">
         <header><h4><span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> / <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span></h4><b data-anim="count" data-value="0">0</b></header>
-        <ul><li class="muted">확인된 강점 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>가 전혀 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span>에 문법 오류가 있음</li><li class="bad"><span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span> 종류가 단조로움</li><li class="bad"><span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.">LocalBusiness</span>/<span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. 기관·회사 정보를 담는 형식.">Organization</span> 타입이 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="자주 묻는 질문을 구조화 데이터로 표시한 것. AI가 그대로 답변으로 가져가기 가장 쉬운 형태.">FAQPage</span>·<span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. 칼럼·게시글 정보를 담는 형식.">Article</span> 같은 답변형 타입이 없음</li></ul>
+        <ul><li class="muted">확인된 강점 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>가 전혀 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span>에 문법 오류가 있음</li><li class="bad"><span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span> 종류가 단조로움</li><li class="bad"><span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.">LocalBusiness</span>/<span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. 기관·회사 정보를 담는 형식.">Organization</span> 타입이 없음</li><li class="bad"><span class="term" tabindex="0" data-tip="자주 묻는 질문을 구조화 데이터로 표시한 것. AI가 그대로 답변으로 가져가기 가장 쉬운 형태.">FAQPage</span>·<span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. 칼럼·게시글 정보를 담는 형식.">Article</span> 같은 답변형 타입이 없음</li><li class="bad">Dentist/MedicalClinic 스키마 미사용</li></ul>
       </article>
       <article class="detail t-d">
         <header><h4>근거·출처·인용성</h4><b data-anim="count" data-value="35">35</b></header>
@@ -353,9 +367,9 @@ th{font-size:12px;color:var(--sub);font-weight:600}
         <header><h4>콘텐츠 신선도</h4><b data-anim="count" data-value="20">20</b></header>
         <ul><li class="good">블로그/소식 섹션 있음</li><li class="bad"><span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>에 날짜가 없음</li><li class="bad">최근 갱신 흔적이 없음</li><li class="bad">화면상 작성·수정일이 안 보임</li></ul>
       </article>
-      <article class="detail t-b">
-        <header><h4>주제별 URL 구조</h4><b data-anim="count" data-value="70">70</b></header>
-        <ul><li class="good">의미 있는 <span class="term" tabindex="0" data-tip="주소 뒤에 붙는 글자 부분. /pricing 처럼 내용을 알 수 있는 단어가 좋고 /page?id=37 같은 건 불리하다.">slug</span> 사용</li><li class="good"><span class="term" tabindex="0" data-tip="주소에 ? 뒤로 붙는 부분(예: ?id=37). 검색엔진이 같은 페이지로 오해하기 쉽다.">쿼리스트링</span> 남용 없음</li><li class="good">URL 깊이 3단계 이하</li><li class="bad">주제별 URL이 없음 — AI가 인용할 개별 페이지가 없음</li><li class="bad">HTTP URL</li></ul>
+      <article class="detail t-c">
+        <header><h4>주제별 URL 구조</h4><b data-anim="count" data-value="56">56</b></header>
+        <ul><li class="good">의미 있는 <span class="term" tabindex="0" data-tip="주소 뒤에 붙는 글자 부분. /pricing 처럼 내용을 알 수 있는 단어가 좋고 /page?id=37 같은 건 불리하다.">slug</span> 사용</li><li class="good"><span class="term" tabindex="0" data-tip="주소에 ? 뒤로 붙는 부분(예: ?id=37). 검색엔진이 같은 페이지로 오해하기 쉽다.">쿼리스트링</span> 남용 없음</li><li class="good">URL 깊이 3단계 이하</li><li class="bad">주제별 URL이 없음 — AI가 인용할 개별 페이지가 없음</li><li class="bad">HTTP URL</li><li class="bad">진료과목별 URL이 없음 — &quot;지역+임플란트&quot; 검색에 걸릴 페이지가 없음</li></ul>
       </article>
       <article class="detail t-e">
         <header><h4>정보 일관성</h4><b data-anim="count" data-value="15">15</b></header>
@@ -433,29 +447,191 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     </tr>
     <tr>
       <td class="rank">10</td>
+      <td class="cat"><span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> / <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span></td>
+      <td class="prob">Dentist/MedicalClinic 스키마 미사용<span class="fix">→ @type을 &quot;Dentist&quot;로 지정하고 medicalSpeci<span class="term" tabindex="0" data-tip="이미지 설명 문구. 눈에는 안 보이지만 검색엔진은 이것으로 사진 내용을 파악한다.">alt</span>y·availableService 기입</span></td>
+      <td class="eff e-md">보통</td>
+      <td class="imp"><span class="imp-track"><i data-anim="bar" data-value="67" style="width:67%"></i></span></td>
+    </tr>
+    <tr>
+      <td class="rank">11</td>
       <td class="cat">콘텐츠 신선도</td>
       <td class="prob">최근 갱신 흔적이 없음<span class="fix">→ 콘텐츠 갱신 후 수정일 표기</span></td>
       <td class="eff e-md">보통</td>
       <td class="imp"><span class="imp-track"><i data-anim="bar" data-value="67" style="width:67%"></i></span></td>
     </tr>
     <tr>
-      <td class="rank">11</td>
+      <td class="rank">12</td>
       <td class="cat">정보 일관성</td>
       <td class="prob">title·og·<span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>의 명칭이 제각각<span class="fix">→ 정식 명칭 하나로 통일 (띄어쓰기까지)</span></td>
       <td class="eff e-lo">낮음</td>
-      <td class="imp"><span class="imp-track"><i data-anim="bar" data-value="56" style="width:56%"></i></span></td>
-    </tr>
-    <tr>
-      <td class="rank">12</td>
-      <td class="cat"><span class="term" tabindex="0" data-tip="검색엔진과 AI가 인식하는 &quot;우리 브랜드라는 하나의 대상&quot;. 이게 흐리면 이름이 비슷한 다른 곳과 섞인다.">Entity</span> 명확성</td>
-      <td class="prob"><span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. 기관·회사 정보를 담는 형식.">Organization</span>/<span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.">LocalBusiness</span> name이 <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>에 없음<span class="fix">→ <span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. 기관·회사 정보를 담는 형식.">Organization</span> <span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span>에 정식 명칭 기입</span></td>
-      <td class="eff e-md">보통</td>
       <td class="imp"><span class="imp-track"><i data-anim="bar" data-value="56" style="width:56%"></i></span></td>
     </tr></tbody>
     </table>
   </section>
 
   
+  <section class="card warn">
+    <h3>의료광고 리스크 점검 <small>의료법 제56조 기준 · 참고용</small></h3>
+    <p class="note">아래 표현은 심의에서 반복적으로 지적되는 유형입니다. 최종 판단은 의료광고심의위원회 기준을 따르십시오.</p>
+    <ul class="warn-list">
+      <li class="w-high">
+        <b>부작용이 없</b>
+        <span>치료 효과를 단정·보장하는 표현 (의료법 제56조 제2항 제2호)</span>
+        <code>…차분하게 하고 긴장을 완화합니다. 폐순환을 통해 100% 체외 배출되어 부작용이 없으며, 치과 치료 공포가 심한 어린이에게 안전한 치료기계입니다. 치아미백…</code>
+      </li>
+    </ul>
+  </section>
+  
+  <section class="card">
+    <h3>복사해서 붙이는 코드 <small>대괄호 [ ] 부분만 채우면 됩니다</small></h3>
+    <p class="note">감점된 항목만 골라 담았습니다. 아래 코드는 이 사이트에서 읽어낸 상호·주소·전화로 미리 채워져 있습니다.</p>
+    
+    <article class="snip">
+      <header>
+        <h4>1. <span class="term" tabindex="0" data-tip="브라우저 탭과 검색결과 맨 윗줄에 굵게 나오는 제목.">title 태그</span></h4>
+        <button class="copy" data-copy="snip-title">복사</button>
+      </header>
+      <p class="snip-why">현재 5자 — 25~40자가 검색결과에서 잘리지 않습니다.</p>
+      <pre id="snip-title"><code>&lt;title&gt;경기 평택시 [핵심 서비스] | 위드미치과&lt;/title&gt;</code></pre>
+      <p class="snip-note">현재: 위드미치과</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>2. <span class="term" tabindex="0" data-tip="검색결과에서 제목 아래 나오는 2줄짜리 설명문. 없으면 구글이 본문에서 아무 데나 잘라 쓴다.">meta description</span></h4>
+        <button class="copy" data-copy="snip-description">복사</button>
+      </header>
+      <p class="snip-why">현재 47자 — 70~150자를 권장합니다.</p>
+      <pre id="snip-description"><code>&lt;meta name=&quot;description&quot; content=&quot;경기 평택시 위드미치과. [핵심 서비스]을(를) [차별점 한 가지] 방식으로 제공합니다. 영업시간과 위치·예약 안내는 홈페이지에서 확인하세요. 문의 031-692-2275.&quot;&gt;</code></pre>
+      <p class="snip-note">현재: 위드미치과, 자연치아보존, 임플란트, 치아교정, 심미보철, 치아미백, 소아진료, 평택</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>3. <span class="term" tabindex="0" data-tip="페이지의 대제목. 한 페이지에 하나만 있어야 &quot;이 페이지 주제는 이것&quot;이라고 검색엔진이 이해한다.">h1</span> 대제목</h4>
+        <button class="copy" data-copy="snip-h1">복사</button>
+      </header>
+      <p class="snip-why"><span class="term" tabindex="0" data-tip="페이지의 대제목. 한 페이지에 하나만 있어야 &quot;이 페이지 주제는 이것&quot;이라고 검색엔진이 이해한다.">h1</span>이 2개 있지만 로고 이미지뿐입니다. 로고는 div로 내리고 <span class="term" tabindex="0" data-tip="페이지의 대제목. 한 페이지에 하나만 있어야 &quot;이 페이지 주제는 이것&quot;이라고 검색엔진이 이해한다.">h1</span>에는 문장을 넣으세요.</p>
+      <pre id="snip-h1"><code>&lt;!-- 기존 --&gt;
+&lt;h1 id=&quot;logo&quot;&gt;&lt;a href=&quot;/&quot;&gt;&lt;img src=&quot;logo.png&quot; alt=&quot;위드미치과&quot;&gt;&lt;/a&gt;&lt;/h1&gt;
+
+&lt;!-- 이렇게 --&gt;
+&lt;div id=&quot;logo&quot;&gt;&lt;a href=&quot;/&quot;&gt;&lt;img src=&quot;logo.png&quot; alt=&quot;위드미치과&quot;&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;h1&gt;경기 평택시 [핵심 서비스] — 위드미치과&lt;/h1&gt;</code></pre>
+      
+    </article>
+    <article class="snip">
+      <header>
+        <h4>4. <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span> (<span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> · Dentist)</h4>
+        <button class="copy" data-copy="snip-jsonld">복사</button>
+      </header>
+      <p class="snip-why"><span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>가 하나도 없습니다. AI가 답변에 가져다 쓰는 1순위 재료입니다.</p>
+      <pre id="snip-jsonld"><code>&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;Dentist&quot;,
+  &quot;name&quot;: &quot;위드미치과&quot;,
+  &quot;url&quot;: &quot;http://withmedental.com&quot;,
+  &quot;telephone&quot;: &quot;031-692-2275&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;addressCountry&quot;: &quot;KR&quot;,
+    &quot;addressRegion&quot;: &quot;경기&quot;,
+    &quot;addressLocality&quot;: &quot;평택시&quot;,
+    &quot;streetAddress&quot;: &quot;경기도 평택시 용죽3로 24&quot;
+  },
+  &quot;openingHoursSpecification&quot;: [
+    {
+      &quot;@type&quot;: &quot;OpeningHoursSpecification&quot;,
+      &quot;dayOfWeek&quot;: [
+        &quot;Monday&quot;,
+        &quot;Tuesday&quot;,
+        &quot;Wednesday&quot;,
+        &quot;Thursday&quot;,
+        &quot;Friday&quot;
+      ],
+      &quot;opens&quot;: &quot;[09:30]&quot;,
+      &quot;closes&quot;: &quot;[18:30]&quot;
+    }
+  ],
+  &quot;sameAs&quot;: [
+    &quot;[네이버 플레이스 URL]&quot;,
+    &quot;[인스타그램 URL]&quot;
+  ],
+  &quot;image&quot;: &quot;http://withmedental.com/images/common/logo.jpg&quot;
+}
+&lt;/script&gt;</code></pre>
+      <p class="snip-note">&lt;/head&gt; 바로 위에 붙이세요. 대괄호 부분만 채우면 됩니다.</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>5. FAQ (질문형 소제목 + <span class="term" tabindex="0" data-tip="자주 묻는 질문을 구조화 데이터로 표시한 것. AI가 그대로 답변으로 가져가기 가장 쉬운 형태.">FAQPage</span>)</h4>
+        <button class="copy" data-copy="snip-faq">복사</button>
+      </header>
+      <p class="snip-why">AI는 질문-답변 한 쌍을 그대로 인용합니다. 이 형태가 없으면 인용 단위가 없습니다.</p>
+      <pre id="snip-faq"><code>&lt;h2&gt;[자주 받는 질문 1]&lt;/h2&gt;
+&lt;p&gt;[답변 2~3문장]&lt;/p&gt;
+
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;[자주 받는 질문 1]&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;[답변 2~3문장]&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;[자주 받는 질문 2]&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;[답변 2~3문장]&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;[자주 받는 질문 3]&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;[답변 2~3문장]&quot;
+      }
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+      <p class="snip-note">화면에 보이는 질문·답변과 <span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> 내용이 같아야 합니다.</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>6. head 기본 태그</h4>
+        <button class="copy" data-copy="snip-head">복사</button>
+      </header>
+      <p class="snip-why">한 줄씩이면 되는데 빠져 있어 감점된 항목들입니다.</p>
+      <pre id="snip-head"><code>&lt;meta property=&quot;og:site_name&quot; content=&quot;위드미치과&quot;&gt;</code></pre>
+      <p class="snip-note">&lt;head&gt; 안에 붙이세요.</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>7. 작성·수정일 표기</h4>
+        <button class="copy" data-copy="snip-date">복사</button>
+      </header>
+      <p class="snip-why">AI와 검색엔진은 최신 정보를 우선합니다. 날짜가 없으면 오래된 문서로 취급됩니다.</p>
+      <pre id="snip-date"><code>&lt;p&gt;최종 수정일: &lt;time datetime=&quot;2026-09-14&quot;&gt;2026. 09. 14&lt;/time&gt;&lt;/p&gt;
+
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;WebPage&quot;,
+  &quot;url&quot;: &quot;http://withmedental.com/&quot;,
+  &quot;dateModified&quot;: &quot;2026-09-14&quot;
+}
+&lt;/script&gt;</code></pre>
+      
+    </article>
+  </section>
   
   <section class="card">
     <h3>용어 풀이 <small>본문에서 점선 밑줄 친 말에 마우스를 올려도 보입니다</small></h3>
@@ -472,7 +648,7 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     <p class="method">
       페이지 소스·robots.txt·sitemap.xml을(를) 수집해 고정 규칙으로 계산했습니다.
       입력한 URL 1개 페이지만 분석했으며 하위 페이지는 포함하지 않습니다.
-      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 14. 19:11
+      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 15. 00:37
     </p>
   </section>
 
@@ -539,6 +715,34 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     });
   }, { threshold: 0.25 });
   nodes.forEach(function(n){ io.observe(n); });
+
+  // 복사 버튼
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.dataset.copy);
+      if (!el) return;
+      var text = el.innerText;
+      var done = function(){ btn.textContent = '복사됨'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = '복사'; btn.classList.remove('done'); }, 1600); };
+
+      // execCommand 를 먼저 쓴다. 동기라 결과가 바로 나오고, clipboard API 는 권한 대기로
+      // 응답이 오지 않는 경우가 있어 버튼이 반응 없는 것처럼 보인다.
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var copied = false;
+      try { copied = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+
+      if (copied) { done(); return; }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(done, function(){ btn.textContent = '직접 선택'; });
+      } else {
+        btn.textContent = '직접 선택';
+      }
+    });
+  });
 
   // 인쇄 시 애니메이션 미완료 방지
   window.addEventListener('beforeprint', function(){
