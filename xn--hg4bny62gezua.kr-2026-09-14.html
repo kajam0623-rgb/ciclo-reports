@@ -130,6 +130,18 @@ th{font-size:12px;color:var(--sub);font-weight:600}
 .gloss b{color:var(--ink)}
 .gloss span{color:var(--sub)}
 
+.snip{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px;background:#fcfcfd}
+.snip header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.snip h4{font-size:15px}
+.snip-why{margin:0 0 10px;font-size:13px;color:var(--sub);line-height:1.6}
+.snip pre{margin:0;background:#14171c;color:#e6e9ee;border-radius:9px;padding:14px 16px;overflow-x:auto;
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.65;white-space:pre}
+.snip-note{margin:9px 0 0;font-size:12.5px;color:var(--b)}
+.copy{flex-shrink:0;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;
+  padding:5px 12px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit}
+.copy:hover{background:#f2f3f5}
+.copy.done{background:var(--a);border-color:var(--a);color:#fff}
+
 .method{color:var(--sub);font-size:11.5px;line-height:1.7;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}
 
 /* 맨 아래 CTA — 리포트를 끝까지 읽은 사람이 다음에 할 일 */
@@ -173,6 +185,8 @@ th{font-size:12px;color:var(--sub);font-weight:600}
   body{background:#fff}
   .wrap{padding:0}
   .card{break-inside:avoid;page-break-inside:avoid;border-color:#ccc}
+  .copy{display:none}
+  .snip pre{background:#f4f5f7!important;color:#14171c!important;border:1px solid #ddd}
   .cta{background:#fff!important;color:#14171c!important;border:2px solid #14171c!important}
   .cta-head em,.cta-fix,.cta-note,.cta-eyebrow,.cta-sign span{color:#333!important}
   .cta-offer{background:#f2f3f5!important} .cta-offer span{color:#555!important}
@@ -195,7 +209,7 @@ th{font-size:12px;color:var(--sub);font-weight:600}
       <div class="url">https://수상한한옥.kr/</div>
     </div>
     <div class="meta">
-      진단일 2026. 9. 14.<br>
+      진단일 2026. 9. 15.<br>
       채점 기준 범용 · 룰베이스 결정론 채점
     </div>
   </div>
@@ -457,6 +471,7 @@ th{font-size:12px;color:var(--sub);font-weight:600}
 
   
   
+  
   <section class="card">
     <h3>용어 풀이 <small>본문에서 점선 밑줄 친 말에 마우스를 올려도 보입니다</small></h3>
     <div class="gloss">
@@ -472,7 +487,7 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     <p class="method">
       페이지 소스·robots.txt·sitemap.xml을(를) 수집해 고정 규칙으로 계산했습니다.
       입력한 URL 1개 페이지만 분석했으며 하위 페이지는 포함하지 않습니다.
-      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 14. 18:49
+      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 15. 00:38
     </p>
   </section>
 
@@ -539,6 +554,34 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     });
   }, { threshold: 0.25 });
   nodes.forEach(function(n){ io.observe(n); });
+
+  // 복사 버튼
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.dataset.copy);
+      if (!el) return;
+      var text = el.innerText;
+      var done = function(){ btn.textContent = '복사됨'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = '복사'; btn.classList.remove('done'); }, 1600); };
+
+      // execCommand 를 먼저 쓴다. 동기라 결과가 바로 나오고, clipboard API 는 권한 대기로
+      // 응답이 오지 않는 경우가 있어 버튼이 반응 없는 것처럼 보인다.
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var copied = false;
+      try { copied = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+
+      if (copied) { done(); return; }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(done, function(){ btn.textContent = '직접 선택'; });
+      } else {
+        btn.textContent = '직접 선택';
+      }
+    });
+  });
 
   // 인쇄 시 애니메이션 미완료 방지
   window.addEventListener('beforeprint', function(){
