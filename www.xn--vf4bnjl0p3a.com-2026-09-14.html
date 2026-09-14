@@ -130,6 +130,18 @@ th{font-size:12px;color:var(--sub);font-weight:600}
 .gloss b{color:var(--ink)}
 .gloss span{color:var(--sub)}
 
+.snip{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px;background:#fcfcfd}
+.snip header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.snip h4{font-size:15px}
+.snip-why{margin:0 0 10px;font-size:13px;color:var(--sub);line-height:1.6}
+.snip pre{margin:0;background:#14171c;color:#e6e9ee;border-radius:9px;padding:14px 16px;overflow-x:auto;
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12.5px;line-height:1.65;white-space:pre}
+.snip-note{margin:9px 0 0;font-size:12.5px;color:var(--b)}
+.copy{flex-shrink:0;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;
+  padding:5px 12px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit}
+.copy:hover{background:#f2f3f5}
+.copy.done{background:var(--a);border-color:var(--a);color:#fff}
+
 .method{color:var(--sub);font-size:11.5px;line-height:1.7;margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}
 
 /* 맨 아래 CTA — 리포트를 끝까지 읽은 사람이 다음에 할 일 */
@@ -173,6 +185,8 @@ th{font-size:12px;color:var(--sub);font-weight:600}
   body{background:#fff}
   .wrap{padding:0}
   .card{break-inside:avoid;page-break-inside:avoid;border-color:#ccc}
+  .copy{display:none}
+  .snip pre{background:#f4f5f7!important;color:#14171c!important;border:1px solid #ddd}
   .cta{background:#fff!important;color:#14171c!important;border:2px solid #14171c!important}
   .cta-head em,.cta-fix,.cta-note,.cta-eyebrow,.cta-sign span{color:#333!important}
   .cta-offer{background:#f2f3f5!important} .cta-offer span{color:#555!important}
@@ -458,6 +472,165 @@ th{font-size:12px;color:var(--sub);font-weight:600}
   
   
   <section class="card">
+    <h3>복사해서 붙이는 코드 <small>대괄호 [ ] 부분만 채우면 됩니다</small></h3>
+    <p class="note">감점된 항목만 골라 담았습니다. 아래 코드는 이 사이트에서 읽어낸 상호·주소·전화로 미리 채워져 있습니다.</p>
+    
+    <article class="snip">
+      <header>
+        <h4>1. <span class="term" tabindex="0" data-tip="브라우저 탭과 검색결과 맨 윗줄에 굵게 나오는 제목.">title 태그</span></h4>
+        <button class="copy" data-copy="snip-title">복사</button>
+      </header>
+      <p class="snip-why">title이 비어 있습니다.</p>
+      <pre id="snip-title"><code>&lt;title&gt;[지역] [핵심 서비스] | www.xn--vf4bnjl0p3a.com&lt;/title&gt;</code></pre>
+      <p class="snip-note">현재: (없음)</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>2. <span class="term" tabindex="0" data-tip="검색결과에서 제목 아래 나오는 2줄짜리 설명문. 없으면 구글이 본문에서 아무 데나 잘라 쓴다.">meta description</span></h4>
+        <button class="copy" data-copy="snip-description">복사</button>
+      </header>
+      <p class="snip-why">없으면 검색결과 문구를 구글이 본문에서 임의로 잘라 씁니다.</p>
+      <pre id="snip-description"><code>&lt;meta name=&quot;description&quot; content=&quot;www.xn--vf4bnjl0p3a.com. [핵심 서비스]을(를) [차별점 한 가지] 방식으로 제공합니다. 위치·예약 안내는 홈페이지에서 확인하세요. 문의 [대표번호].&quot;&gt;</code></pre>
+      <p class="snip-note">현재: (없음)</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>3. <span class="term" tabindex="0" data-tip="페이지의 대제목. 한 페이지에 하나만 있어야 &quot;이 페이지 주제는 이것&quot;이라고 검색엔진이 이해한다.">h1</span> 대제목</h4>
+        <button class="copy" data-copy="snip-h1">복사</button>
+      </header>
+      <p class="snip-why"><span class="term" tabindex="0" data-tip="페이지의 대제목. 한 페이지에 하나만 있어야 &quot;이 페이지 주제는 이것&quot;이라고 검색엔진이 이해한다.">h1</span>이 없어 페이지 주제가 검색엔진에 전달되지 않습니다.</p>
+      <pre id="snip-h1"><code>&lt;h1&gt;[지역] [핵심 서비스] — www.xn--vf4bnjl0p3a.com&lt;/h1&gt;</code></pre>
+      
+    </article>
+    <article class="snip">
+      <header>
+        <h4>4. <span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span> (<span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> · <span class="term" tabindex="0" data-tip="구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.">LocalBusiness</span>)</h4>
+        <button class="copy" data-copy="snip-jsonld">복사</button>
+      </header>
+      <p class="snip-why"><span class="term" tabindex="0" data-tip="사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.">구조화 데이터</span>가 하나도 없습니다. AI가 답변에 가져다 쓰는 1순위 재료입니다.</p>
+      <pre id="snip-jsonld"><code>&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;LocalBusiness&quot;,
+  &quot;name&quot;: &quot;www.xn--vf4bnjl0p3a.com&quot;,
+  &quot;url&quot;: &quot;https://www.xn--vf4bnjl0p3a.com&quot;,
+  &quot;telephone&quot;: &quot;[대표번호]&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;addressCountry&quot;: &quot;KR&quot;,
+    &quot;addressRegion&quot;: &quot;[시도]&quot;,
+    &quot;addressLocality&quot;: &quot;[시군구]&quot;,
+    &quot;streetAddress&quot;: &quot;[도로명 주소]&quot;
+  },
+  &quot;openingHoursSpecification&quot;: [
+    {
+      &quot;@type&quot;: &quot;OpeningHoursSpecification&quot;,
+      &quot;dayOfWeek&quot;: [
+        &quot;Monday&quot;,
+        &quot;Tuesday&quot;,
+        &quot;Wednesday&quot;,
+        &quot;Thursday&quot;,
+        &quot;Friday&quot;
+      ],
+      &quot;opens&quot;: &quot;[09:30]&quot;,
+      &quot;closes&quot;: &quot;[18:30]&quot;
+    }
+  ],
+  &quot;sameAs&quot;: [
+    &quot;[네이버 플레이스 URL]&quot;,
+    &quot;[인스타그램 URL]&quot;
+  ]
+}
+&lt;/script&gt;</code></pre>
+      <p class="snip-note">&lt;/head&gt; 바로 위에 붙이세요. 대괄호 부분만 채우면 됩니다.</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>5. FAQ (질문형 소제목 + <span class="term" tabindex="0" data-tip="자주 묻는 질문을 구조화 데이터로 표시한 것. AI가 그대로 답변으로 가져가기 가장 쉬운 형태.">FAQPage</span>)</h4>
+        <button class="copy" data-copy="snip-faq">복사</button>
+      </header>
+      <p class="snip-why">AI는 질문-답변 한 쌍을 그대로 인용합니다. 이 형태가 없으면 인용 단위가 없습니다.</p>
+      <pre id="snip-faq"><code>&lt;h2&gt;[자주 받는 질문 1]&lt;/h2&gt;
+&lt;p&gt;[답변 2~3문장]&lt;/p&gt;
+
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;FAQPage&quot;,
+  &quot;mainEntity&quot;: [
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;[자주 받는 질문 1]&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;[답변 2~3문장]&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;[자주 받는 질문 2]&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;[답변 2~3문장]&quot;
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;Question&quot;,
+      &quot;name&quot;: &quot;[자주 받는 질문 3]&quot;,
+      &quot;acceptedAnswer&quot;: {
+        &quot;@type&quot;: &quot;Answer&quot;,
+        &quot;text&quot;: &quot;[답변 2~3문장]&quot;
+      }
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+      <p class="snip-note">화면에 보이는 질문·답변과 <span class="term" tabindex="0" data-tip="사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.">JSON-LD</span> 내용이 같아야 합니다.</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>6. head 기본 태그</h4>
+        <button class="copy" data-copy="snip-head">복사</button>
+      </header>
+      <p class="snip-why">한 줄씩이면 되는데 빠져 있어 감점된 항목들입니다.</p>
+      <pre id="snip-head"><code>&lt;link rel=&quot;canonical&quot; href=&quot;https://www.xn--vf4bnjl0p3a.com/&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;www.xn--vf4bnjl0p3a.com&quot;&gt;</code></pre>
+      <p class="snip-note">&lt;head&gt; 안에 붙이세요.</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>7. <span class="term" tabindex="0" data-tip="홈페이지 최상단에 두는 안내문 파일. 검색 로봇에게 어디를 봐도 되는지 알려준다.">robots.txt</span></h4>
+        <button class="copy" data-copy="snip-robots">복사</button>
+      </header>
+      <p class="snip-why">검색 로봇에게 sitemap 위치를 알려주는 파일입니다.</p>
+      <pre id="snip-robots"><code>User-agent: *
+Allow: /
+
+Sitemap: https://www.xn--vf4bnjl0p3a.com/sitemap.xml</code></pre>
+      <p class="snip-note">홈페이지 최상단에 <span class="term" tabindex="0" data-tip="홈페이지 최상단에 두는 안내문 파일. 검색 로봇에게 어디를 봐도 되는지 알려준다.">robots.txt</span> 로 저장 → https://www.xn--vf4bnjl0p3a.com/<span class="term" tabindex="0" data-tip="홈페이지 최상단에 두는 안내문 파일. 검색 로봇에게 어디를 봐도 되는지 알려준다.">robots.txt</span> 에서 열려야 합니다.</p>
+    </article>
+    <article class="snip">
+      <header>
+        <h4>8. 작성·수정일 표기</h4>
+        <button class="copy" data-copy="snip-date">복사</button>
+      </header>
+      <p class="snip-why">AI와 검색엔진은 최신 정보를 우선합니다. 날짜가 없으면 오래된 문서로 취급됩니다.</p>
+      <pre id="snip-date"><code>&lt;p&gt;최종 수정일: &lt;time datetime=&quot;2026-09-14&quot;&gt;2026. 09. 14&lt;/time&gt;&lt;/p&gt;
+
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;WebPage&quot;,
+  &quot;url&quot;: &quot;https://www.xn--vf4bnjl0p3a.com/&quot;,
+  &quot;dateModified&quot;: &quot;2026-09-14&quot;
+}
+&lt;/script&gt;</code></pre>
+      
+    </article>
+  </section>
+  
+  <section class="card">
     <h3>용어 풀이 <small>본문에서 점선 밑줄 친 말에 마우스를 올려도 보입니다</small></h3>
     <div class="gloss">
       <div><b>구조화 데이터</b><span>사업장 정보를 기계가 알아보게 정리한 데이터. AI가 답변에 가져다 쓰는 1순위 재료.</span></div><div><b>내부 링크</b><span>우리 홈페이지 안에서 페이지끼리 연결한 링크.</span></div><div><b>렌더 차단 CSS</b><span>화면이 그려지기 전에 먼저 다 받아야 하는 디자인 파일. 개수가 많으면 첫 화면이 늦게 뜬다.</span></div><div><b>브레드크럼</b><span>&quot;홈 &gt; 서비스안내 &gt; 상세페이지&quot; 처럼 현재 위치를 보여주는 경로 표시.</span></div><div><b>색인</b><span>읽어간 페이지를 검색엔진이 자기 데이터베이스에 저장하는 것. 색인이 안 되면 검색해도 안 나온다.</span></div><div><b>앵커</b><span>한 페이지 안에서 아래로 스크롤만 이동시키는 링크(#표시). 별도 페이지가 아니라서 검색결과에 따로 안 잡힌다.</span></div><div><b>원페이지</b><span>모든 내용이 한 장에 다 들어 있고 메뉴는 스크롤만 시키는 구조. 보기엔 깔끔하지만 검색에는 페이지 1개로만 잡혀 불리하다.</span></div><div><b>전송 압축</b><span>홈페이지 파일을 압축해서 보내는 기능. 켜두면 로딩이 눈에 띄게 빨라진다.</span></div><div><b>지연 로딩</b><span>화면에 보이는 사진부터 먼저 불러오고 아래쪽 사진은 나중에 불러오는 기법. 첫 화면이 빨리 뜬다.</span></div><div><b>쿼리스트링</b><span>주소에 ? 뒤로 붙는 부분(예: ?id=37). 검색엔진이 같은 페이지로 오해하기 쉽다.</span></div><div><b>크롤링</b><span>검색엔진 로봇이 홈페이지를 돌아다니며 내용을 읽어가는 것.</span></div><div><b>헤딩</b><span>제목 태그(h1·h2·h3…). 문서의 목차 구조를 만든다.</span></div><div><b>alt</b><span>이미지 설명 문구. 눈에는 안 보이지만 검색엔진은 이것으로 사진 내용을 파악한다.</span></div><div><b>Article</b><span>구조화 데이터 종류 중 하나. 칼럼·게시글 정보를 담는 형식.</span></div><div><b>canonical</b><span>같은 내용이 여러 주소로 열릴 때 &quot;이게 대표 주소다&quot;라고 지정하는 표시. 없으면 검색엔진이 점수를 나눠 매긴다.</span></div><div><b>description</b><span>검색결과에서 제목 아래 나오는 2줄짜리 설명문.</span></div><div><b>E-E-A-T</b><span>구글이 콘텐츠를 평가하는 4가지 기준 — 경험·전문성·권위·신뢰성. 누가 썼고 믿을 만한가를 본다.</span></div><div><b>Entity</b><span>검색엔진과 AI가 인식하는 &quot;우리 브랜드라는 하나의 대상&quot;. 이게 흐리면 이름이 비슷한 다른 곳과 섞인다.</span></div><div><b>FAQPage</b><span>자주 묻는 질문을 구조화 데이터로 표시한 것. AI가 그대로 답변으로 가져가기 가장 쉬운 형태.</span></div><div><b>h1</b><span>페이지의 대제목. 한 페이지에 하나만 있어야 &quot;이 페이지 주제는 이것&quot;이라고 검색엔진이 이해한다.</span></div><div><b>h2</b><span>페이지 안의 소제목. 글을 단락으로 나눠주는 역할.</span></div><div><b>HTTPS</b><span>자물쇠 표시가 붙는 보안 연결. 없으면 브라우저가 &quot;안전하지 않음&quot; 경고를 띄운다.</span></div><div><b>JSON-LD</b><span>사람 눈에는 안 보이지만 검색엔진·AI가 읽는 정보 카드. 상호·주소·전화·영업시간을 기계가 알아보는 형식으로 적어둔 것.</span></div><div><b>LocalBusiness</b><span>구조화 데이터 종류 중 하나. &quot;여기는 오프라인 매장·사업장이다&quot;라고 알려주는 형식.</span></div><div><b>meta description</b><span>검색결과에서 제목 아래 나오는 2줄짜리 설명문. 없으면 구글이 본문에서 아무 데나 잘라 쓴다.</span></div><div><b>NAP</b><span>이름(Name)·주소(Address)·전화(Phone). 이 셋이 모든 곳에서 똑같아야 지역 검색에 유리하다.</span></div><div><b>noindex</b><span>&quot;이 페이지는 검색결과에 넣지 마세요&quot;라는 표시. 실수로 켜두면 검색에서 통째로 사라진다.</span></div><div><b>og:site_name</b><span>SNS나 카톡에 링크를 붙였을 때 표시되는 사이트 이름.</span></div><div><b>Organization</b><span>구조화 데이터 종류 중 하나. 기관·회사 정보를 담는 형식.</span></div><div><b>robots.txt</b><span>홈페이지 최상단에 두는 안내문 파일. 검색 로봇에게 어디를 봐도 되는지 알려준다.</span></div><div><b>sameAs</b><span>구조화 데이터 항목. 네이버 플레이스·인스타그램 등 우리 쪽 다른 공식 계정 주소를 적어두는 칸. AI가 이름이 비슷한 다른 곳과 헷갈리지 않게 해준다.</span></div><div><b>SEO</b><span>검색엔진 최적화. 네이버·구글 검색 결과에 잘 노출되게 홈페이지를 정리하는 일.</span></div><div><b>sitemap.xml</b><span>홈페이지에 어떤 페이지들이 있는지 목록으로 정리한 파일. 검색엔진이 빠짐없이 찾아가게 해준다.</span></div><div><b>title 태그</b><span>브라우저 탭과 검색결과 맨 윗줄에 굵게 나오는 제목.</span></div><div><b>viewport</b><span>모바일 화면 크기에 맞춰 보이게 하는 설정. 없으면 휴대폰에서 글씨가 깨알같이 작게 나온다.</span></div>
@@ -472,7 +645,7 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     <p class="method">
       페이지 소스·robots.txt·sitemap.xml을(를) 수집해 고정 규칙으로 계산했습니다.
       입력한 URL 1개 페이지만 분석했으며 하위 페이지는 포함하지 않습니다.
-      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 14. 23:21
+      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 14. 23:33
     </p>
   </section>
 
@@ -539,6 +712,34 @@ th{font-size:12px;color:var(--sub);font-weight:600}
     });
   }, { threshold: 0.25 });
   nodes.forEach(function(n){ io.observe(n); });
+
+  // 복사 버튼
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = document.getElementById(btn.dataset.copy);
+      if (!el) return;
+      var text = el.innerText;
+      var done = function(){ btn.textContent = '복사됨'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = '복사'; btn.classList.remove('done'); }, 1600); };
+
+      // execCommand 를 먼저 쓴다. 동기라 결과가 바로 나오고, clipboard API 는 권한 대기로
+      // 응답이 오지 않는 경우가 있어 버튼이 반응 없는 것처럼 보인다.
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var copied = false;
+      try { copied = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+
+      if (copied) { done(); return; }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(done, function(){ btn.textContent = '직접 선택'; });
+      } else {
+        btn.textContent = '직접 선택';
+      }
+    });
+  });
 
   // 인쇄 시 애니메이션 미완료 방지
   window.addEventListener('beforeprint', function(){
