@@ -615,7 +615,7 @@ Sitemap: https://ysdreambd.com/sitemap.xml</code></pre>
     <p class="method">
       페이지 소스·robots.txt·sitemap.xml을(를) 수집해 고정 규칙으로 계산했습니다.
       입력한 URL 1개 페이지만 분석했으며 하위 페이지는 포함하지 않습니다.
-      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 20. 00:03
+      동일 시점·동일 페이지면 항상 같은 점수가 나옵니다. 수집 시각 2026. 9. 20. 00:22
     </p>
   </section>
 
@@ -666,22 +666,24 @@ Sitemap: https://ysdreambd.com/sitemap.xml</code></pre>
 
   // HTML 자체에 최종값이 들어 있다. JS가 안 돌거나 PDF로 뽑아도 숫자와 막대는 제대로 나온다.
   // 애니메이션은 그 위에 얹는 것이므로, 여기서 0으로 되돌린 뒤 화면에 들어올 때 다시 채운다.
-  if (reduce || !('IntersectionObserver' in window)) return;
-
-  nodes.forEach(function(n){
-    if (n.dataset.anim === 'bar') n.style.width = '0%';
-    else if (n.dataset.anim === 'count') n.textContent = '0';
-    else if (n.dataset.anim === 'ring') n.style.strokeDashoffset = parseFloat(n.style.strokeDasharray);
-  });
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if (!en.isIntersecting) return;
-      run[en.target.dataset.anim](en.target);
-      io.unobserve(en.target);
+  // 여기서 return 하면 아래 복사 버튼까지 등록이 안 된다. "애니메이션 줄이기"를 켠 사용자는
+  // 복사 버튼이 전부 먹통이 됐었다. 애니메이션만 조건으로 감싼다.
+  if (!reduce && ('IntersectionObserver' in window)) {
+    nodes.forEach(function(n){
+      if (n.dataset.anim === 'bar') n.style.width = '0%';
+      else if (n.dataset.anim === 'count') n.textContent = '0';
+      else if (n.dataset.anim === 'ring') n.style.strokeDashoffset = parseFloat(n.style.strokeDasharray);
     });
-  }, { threshold: 0.25 });
-  nodes.forEach(function(n){ io.observe(n); });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        run[en.target.dataset.anim](en.target);
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.25 });
+    nodes.forEach(function(n){ io.observe(n); });
+  }
 
   // 복사 버튼
   document.querySelectorAll('.copy').forEach(function(btn){
@@ -703,11 +705,20 @@ Sitemap: https://ysdreambd.com/sitemap.xml</code></pre>
       document.body.removeChild(ta);
 
       if (copied) { done(); return; }
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(done, function(){ btn.textContent = '직접 선택'; });
-      } else {
-        btn.textContent = '직접 선택';
-      }
+      // 복사가 막히면 코드를 대신 선택해 둔다. Ctrl+C 만 누르면 되고, 라벨은 잠시 뒤 원래대로.
+      var manual = function(){
+        var sel = window.getSelection(); sel.removeAllRanges();
+        var range = document.createRange(); range.selectNodeContents(el); sel.addRange(range);
+        btn.textContent = '선택됨 · Ctrl+C';
+        setTimeout(function(){ btn.textContent = '복사'; }, 2600);
+      };
+      // clipboard API 는 권한 대기로 성공도 실패도 안 하고 멈출 때가 있다(창이 뒤에 있거나 헤드리스).
+      // 1초 안에 답이 없으면 선택 모드로 넘어간다. 먼저 끝난 쪽 하나만 반영한다.
+      if (!navigator.clipboard) { manual(); return; }
+      var settled = false;
+      var once = function(fn){ return function(){ if (settled) return; settled = true; fn(); }; };
+      navigator.clipboard.writeText(text).then(once(done), once(manual));
+      setTimeout(once(manual), 1000);
     });
   });
 
